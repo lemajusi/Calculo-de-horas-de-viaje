@@ -75,7 +75,7 @@ function procesarEvento(evento, travelCalendar) {
 
   const { duracionMinutos, lineas } = resultado;
   const resumenLineas =
-    lineas.length > 0 ? lineas.join("\n") : "Sin información de líneas"; // ← línea que faltaba
+    lineas.length > 0 ? lineas.join("\n") : "Sin información de líneas";
 
   console.log(`⏱️ Tiempo estimado: ${duracionMinutos} minutos`);
 
@@ -107,7 +107,7 @@ function procesarEvento(evento, travelCalendar) {
       ? resultadoVuelta.duracionMinutos
       : duracionMinutos;
     const resumenLineasVuelta =
-      resultadoVuelta && resultadoVuelta.lineas.length > 0 // ← también corregido
+      resultadoVuelta && resultadoVuelta.lineas.length > 0
         ? resultadoVuelta.lineas.join("\n")
         : "Sin información de líneas";
 
@@ -145,7 +145,7 @@ function calcularTiempoViaje(origen, destino, horaLlegada) {
     `?origin=${encodeURIComponent(origen)}` +
     `&destination=${encodeURIComponent(destino)}` +
     `&mode=transit` +
-    `&departure_time=${departureTimestamp}` + // ← hora real estimada de salida
+    `&departure_time=${departureTimestamp}` +
     (CONFIG.TRANSIT_PREFERENCE
       ? `&transit_routing_preference=${CONFIG.TRANSIT_PREFERENCE}`
       : "") +
